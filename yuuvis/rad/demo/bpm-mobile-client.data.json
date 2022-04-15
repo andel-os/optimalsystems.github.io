@@ -1,0 +1,107 @@
+[
+    {
+        "id": "1",
+        "label": "Dienstreisebeleg einreichen",
+        "uploadTargetId": "7478F98AC8714C99A740E60C46B81233",
+        "uploadTargetType": "passfoto",
+        "processId": "DF6116ABED8D42CCA0FEFBF9002DD050",
+        "content": "required",
+        "fields": [
+            {
+                "name": "begin",
+                "label": "Beginn der Dienstreise",
+                "type": "date",
+                "required": true
+            },
+            {
+                "name": "end",
+                "label": "Ende der Dienstreise",
+                "type": "date"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "label": "Lieferant anlegen (Ordner ohne Datei)",
+        "uploadTargetType": "etlasupplier",
+        "content": "none",
+        "fields": [
+            {
+                "name": "etlasupplierno",
+                "label": "Lieferantennummer",
+                "type": "string",
+                "required": true,
+                "value": "4711"
+            },
+            {
+                "name": "name",
+                "label": "Name",
+                "type": "string",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "label": "AdHoc-Workflow mit Dokument starten",
+        "uploadTargetId": "7478F98AC8714C99A740E60C46B81233",
+        "uploadTargetType": "dokument",
+        "processId": "DF6116ABED8D42CCA0FEFBF9002DD050",
+        "content": "required",
+        "fields": [
+            {
+                "name": "titel",
+                "label": "Bildbeschreibung",
+                "type": "string",
+                "required": true
+            },
+            {
+                "name": "whatabout",
+                "label": "Worum gehts?",
+                "type": "string",
+                "required": true,
+                "isWorkflowField": true
+            },
+            {
+                "name": "enableedit",
+                "label": "...",
+                "type": "hidden",
+                "value": true,
+                "isWorkflowField": true
+            },
+            {
+                "name": "routinglist",
+                "label": "...",
+                "type": "hidden",
+                "isWorkflowField": true,
+                "value": [{
+                    "sequence": 10,
+                    "task": "Beleg bearbeiten",
+                    "recipient": "bartonitz",
+                    "done": false
+                }]
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "label": "Workflow ohne Dokument starten",
+        "processId": "DF6116ABED8D42CCA0FEFBF9002DD050",
+        "content": "none",
+        "fields": [
+            {
+                "name": "etlasupplierno",
+                "label": "Lieferantennummer",
+                "type": "string",
+                "required": true,
+                "value": "4711"
+            },
+            {
+                "name": "name",
+                "label": "Name",
+                "type": "string",
+                "required": true
+            }
+        ]
+    }
+]
